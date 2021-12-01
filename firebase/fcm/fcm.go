@@ -14,7 +14,7 @@ type partialErr []error
 
 // CheckAndSendMessage check if the notifications has to sent to single or mutliple devices.
 func CheckAndSendMessage(msg *jsonV1.PushNotificationAttributes) error {
-	fcmClient := firebase.FcmClient()
+	fcmClient, _ := firebase.InitializeAppDefault().Messaging(context.Background())
 	if len(msg.Tokens) == 1 {
 		_, err := Send(fcmClient, toFcmMessage(msg))
 		if err != nil {
