@@ -12,13 +12,17 @@ To run this project, you will need to add the following environment variables to
 `GOOGLE_APPLICATION_CREDENTIALS = "serviceAccountKey.json"`
 
 
-## Deployment
+## Local Deployment
 
-To deploy this project run
+Install Docker before runing this project from `https://docs.docker.com/engine/install/ubuntu/`
+
+To run this project run
 
 ```bash
-  go run main.go
+  docker-compose up
 ```
+
+enter `localhost:5000/pushNotification` endpoint in postman to use the REST API.
 
 
 ## Documentation
